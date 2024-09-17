@@ -5,7 +5,10 @@ from .models import (
     FooterText,
     Feature,
     About,
-    TeamBlock
+    TeamBlock,
+    AvatarSocials,
+    Courses
+
 )
 
 
@@ -14,4 +17,8 @@ admin.site.register(FooterText)
 admin.site.register(Feature)
 admin.site.register(About)
 admin.site.register(TeamBlock)
+admin.site.register(AvatarSocials)
+admin.site.register(Courses)
+
+
 

@@ -5,8 +5,10 @@ from .models import (
     FooterText,
     Feature,
     About,
-    TeamBlock 
-
+    TeamBlock,
+    AvatarSocials,
+    Courses,
+    
 )
 
 def index(request):
@@ -15,7 +17,10 @@ def index(request):
         "footer_text": FooterText.objects.all().first(),
         "feature": Feature.objects.all(),
         "about": About.objects.all(),
-        "team_blocks": TeamBlock.objects.all()
+        "team_blocks": TeamBlock.objects.all(),
+        "avatarsocials": AvatarSocials.objects.all(),
+        "courses": Courses.objects.all()
+        
     }
 
     return render(request,"base.html", context)
