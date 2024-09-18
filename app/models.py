@@ -156,7 +156,7 @@ class Headquarter(models.Model):
         verbose_name_plural = "Headquarter"
 
 
-class ContactUst(models.Model):
+class ContactUs(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(max_length=255)
     image = models.ImageField(upload_to="contact_us")

@@ -11,7 +11,7 @@ from .models import (
     StudentReviews,
     ContactInfo,
     Headquarter,
-    ContactUst,
+    ContactUs,
     Socials
 )
 
@@ -27,7 +27,7 @@ def index(request):
         "studentreviews": StudentReviews.objects.all(),
         "contactinfo": ContactInfo.objects.all().first(),
         "headquarter": Headquarter.objects.all().first(),
-        "contact_us": ContactUst.objects.all().first(),
+        "contact_us": ContactUs.objects.all().first(),
         "socials": Socials.objects.all()
         
     }

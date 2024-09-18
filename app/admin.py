@@ -11,7 +11,7 @@ from .models import (
     StudentReviews,
     ContactInfo,
     Headquarter,
-    ContactUst,
+    ContactUs,
     Socials
    
 
@@ -28,7 +28,7 @@ admin.site.register(Courses)
 admin.site.register(StudentReviews)
 admin.site.register(ContactInfo)
 admin.site.register(Headquarter)
-admin.site.register(ContactUst)
+admin.site.register(ContactUs)
 admin.site.register(Socials)
 
 
