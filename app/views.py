@@ -8,7 +8,11 @@ from .models import (
     TeamBlock,
     AvatarSocials,
     Courses,
-    
+    StudentReviews,
+    ContactInfo,
+    Headquarter,
+    ContactUst,
+    Socials
 )
 
 def index(request):
@@ -19,8 +23,14 @@ def index(request):
         "about": About.objects.all(),
         "team_blocks": TeamBlock.objects.all(),
         "avatarsocials": AvatarSocials.objects.all(),
-        "courses": Courses.objects.all()
+        "courses": Courses.objects.all(),
+        "studentreviews": StudentReviews.objects.all(),
+        "contactinfo": ContactInfo.objects.all().first(),
+        "headquarter": Headquarter.objects.all().first(),
+        "contact_us": ContactUst.objects.all().first(),
+        "socials": Socials.objects.all()
         
     }
 
     return render(request,"base.html", context)
+

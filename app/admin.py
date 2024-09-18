@@ -7,7 +7,13 @@ from .models import (
     About,
     TeamBlock,
     AvatarSocials,
-    Courses
+    Courses,
+    StudentReviews,
+    ContactInfo,
+    Headquarter,
+    ContactUst,
+    Socials
+   
 
 )
 
@@ -19,6 +25,10 @@ admin.site.register(About)
 admin.site.register(TeamBlock)
 admin.site.register(AvatarSocials)
 admin.site.register(Courses)
-
+admin.site.register(StudentReviews)
+admin.site.register(ContactInfo)
+admin.site.register(Headquarter)
+admin.site.register(ContactUst)
+admin.site.register(Socials)
 
 

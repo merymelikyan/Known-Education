@@ -207,11 +207,11 @@ https://templatemo.com/tm-516-known
                                 </div>
                                 <ul class="social-icon">
                                    
-                                      <li>
+                                      {% comment %} <li>
                                         <a href="{{avatarsocials.0.url}}" title="{{avatarsocials.0.title}}">
                                           <i class="{{avatarsocials.0.socials_html_class}}"></i>
                                         </a>
-                                      </li>
+                                      </li> {% endcomment %}
                                      
                                 </ul>
                           </div>
@@ -282,20 +282,20 @@ https://templatemo.com/tm-516-known
 
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
-                              <h2>Student Reviews <small>from around the world</small></h2>
+                              <h2>{{header_text.7.title}} <small>{{header_text.7.description}}</small></h2>
                          </div>
 
                          <div class="owl-carousel owl-theme owl-client">
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="{% static "images/tst-image1.jpg" %}" class="img-responsive" alt="">
+                                             <img src="{{studentreviews.0.image.url}}" class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
-                                             <h4>Jackson</h4>
-                                             <span>Shopify Developer</span>
+                                             <h4>{{studentreviews.0.name}}</h4>
+                                             <span>{{studentreviews.0.position}}</span>
                                         </div>
-                                        <p>You really do help young creative minds to get quality education and professional job search assistance. I’d recommend it to everyone!</p>
+                                        <p>{{studentreviews.0.description}}</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -309,13 +309,13 @@ https://templatemo.com/tm-516-known
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="{% static "images/tst-image2.jpg" %}" class="img-responsive" alt="">
+                                             <img src="{{studentreviews.1.image.url}}" class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
-                                             <h4>Camila</h4>
-                                             <span>Marketing Manager</span>
+                                             <h4>{{studentreviews.1.name}}</h4>
+                                             <span>{{studentreviews.1.position}}</span>
                                         </div>
-                                        <p>Trying something new is exciting! Thanks for the amazing law course and the great teacher who was able to make it interesting.</p>
+                                        <p>{{studentreviews.1.description}}</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -327,13 +327,13 @@ https://templatemo.com/tm-516-known
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="{% static "images/tst-image3.jpg" %}" class="img-responsive" alt="">
+                                             <img src="{{studentreviews.2.image.url}}" class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
-                                             <h4>Barbie</h4>
-                                             <span>Art Director</span>
+                                             <h4>{{studentreviews.2.name}}</h4>
+                                             <span>{{studentreviews.2.position}}</span>
                                         </div>
-                                        <p>Donec erat libero, blandit vitae arcu eu, lacinia placerat justo. Sed sollicitudin quis felis vitae hendrerit.</p>
+                                        <p>{{studentreviews.2.description}}</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -346,13 +346,13 @@ https://templatemo.com/tm-516-known
                               <div class="col-md-4 col-sm-4">
                                    <div class="item">
                                         <div class="tst-image">
-                                             <img src="{% static "images/tst-image4.jpg" %}" class="img-responsive" alt="">
+                                             <img src="{{studentreviews.3.image.url}}" class="img-responsive" alt="">
                                         </div>
                                         <div class="tst-author">
-                                             <h4>Andrio</h4>
-                                             <span>Web Developer</span>
+                                             <h4>{{studentreviews.2.name}}</h4>
+                                             <span>{{studentreviews.3.position}}</span>
                                         </div>
-                                        <p>Nam eget mi eu ante faucibus viverra nec sed magna. Vivamus viverra sapien ex, elementum varius ex sagittis vel.</p>
+                                        <p>{{studentreviews.3.description}}</p>
                                         <div class="tst-rating">
                                              <i class="fa fa-star"></i>
                                              <i class="fa fa-star"></i>
@@ -377,15 +377,15 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-6 col-sm-12">
                          <form id="contact-form" role="form" action="" method="post">
                               <div class="section-title">
-                                   <h2>Contact us <small>we love conversations. let us talk!</small></h2>
+                                   <h2>{{contact_us.title}} <small>{{contact_us.description}}</small></h2>
                               </div>
 
                               <div class="col-md-12 col-sm-12">
-                                   <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+                                   <input name="name" type="text" class="form-control" placeholder="Enter full name"  required="">
                     
-                                   <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
+                                   <input name="email" type="email" class="form-control" placeholder="Enter email address"  required="">
 
-                                   <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
+                                   <textarea name="content" class="form-control" rows="6" placeholder="Tell us about your message"  required=""></textarea>
                               </div>
 
                               <div class="col-md-4 col-sm-12">
@@ -397,7 +397,7 @@ https://templatemo.com/tm-516-known
 
                     <div class="col-md-6 col-sm-12">
                          <div class="contact-image">
-                              <img src="{% static "images/contact-image.jpg" %}" class="img-responsive" alt="Smiling Two Girls">
+                              <img src="{{contact_us.image.url}}" class="img-responsive" alt="Smiling Two Girls">
                          </div>
                     </div>
 
@@ -414,22 +414,31 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-4 col-sm-6">
                          <div class="footer-info">
                               <div class="section-title">
-                                   <h2>Headquarter</h2>
+                                   <h2>{{headquarter.title}}</h2>
                               </div>
                               <address>
-                                   <p>1800 dapibus a tortor pretium,<br> Integer nisl dui, ABC 12000</p>
+                                   <p>{{headquarter.text1}}<br> {{headquarter.text2}}</p>
                               </address>
 
                               <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                {% for social in socials %}
+                                  <li>
+                                    <a href="{{social.url}}" target="_blank" attr="{{social.title}}">
+                                      <i class="{{social.html_class}}"></i>
+                                    </a>
+                                  </li>
+                                {% endfor %}
+                                   {% comment %} {% for social in socials %}
+                                    <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
                                    <li><a href="#" class="fa fa-twitter"></a></li>
                                    <li><a href="#" class="fa fa-instagram"></a></li>
+                                   {% endfor %} {% endcomment %}
                               </ul>
 
                               <div class="copyright-text"> 
-                                   <p>Copyright &copy; 2019 Company Name</p>
+                                   <p>{{footer_text.text1}}</p>
                                    
-                                   <p>Design: TemplateMo</p>
+                                   <p>{{footer_text.text2}}</p>
                               </div>
                          </div>
                     </div>
@@ -437,11 +446,11 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-4 col-sm-6">
                          <div class="footer-info">
                               <div class="section-title">
-                                   <h2>Contact Info</h2>
+                                   <h2>{{contactinfo.title}}</h2>
                               </div>
                               <address>
-                                   <p>+65 2244 1100, +66 1800 1100</p>
-                                   <p><a href="mailto:youremail.co">hello@youremail.co</a></p>
+                                   <p>{{contactinfo.phone1}} {{contactinfo.phone2}}</p>
+                                   <p><a href="{{contactinfo.email}}">{{contactinfo.email_name}}</a></p>
                               </address>
 
                               <div class="footer_menu">
@@ -467,7 +476,7 @@ https://templatemo.com/tm-516-known
                                              <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required="">
                                              <input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
                                         </form>
-                                        <span><sup>*</sup> Please note - we do not spam your email.</span>
+                                        <span><sup>*</sup> {{footer_text.text3}}</span>
                                    </div>
                               </div>
                          </div>
