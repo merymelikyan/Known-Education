@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}    
+  
+  
+  {% block reviews_template %}
+   <!-- TESTIMONIAL -->
+    <section id="testimonial">
+      <div class="container">
+          <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title">
+                          <h2>{{header_text.7.title}} <small>{{header_text.7.description}}</small></h2>
+                    </div>
+
+                    <div class="owl-carousel owl-theme owl-client">
+
+                        {% for student in studentreviews %}  
+                          <div class="col-md-4 col-sm-4">
+                              <div class="item">
+                                    <div class="tst-image">
+                                        <img src="{{student.image.url}}" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="tst-author">
+                                        <h4>{{student.name}}</h4>
+                                        <span>{{student.position}}</span>
+                                    </div>
+                                    <p>{{student.description}}</p>
+                                    <div class="tst-rating">
+                                      <i class="{{student.reviews_class1}}"></i>
+                                      <i class="{{student.reviews_class2}}"></i>
+                                      <i class="{{student.reviews_class3}}"></i>
+                                      <i class="{{student.reviews_class4}}"></i>
+                                      <i class="{{student.reviews_class5}}"></i>
+                                    </div>
+                              </div>
+                          </div>
+                        {% endfor %}  
+                    </div>
+                </div>
+          </div>
+      </div>
+    </section> 
+  {% endblock %}

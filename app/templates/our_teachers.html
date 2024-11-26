@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}    
+  
+  
+  {% block our_teachers_template %}
+  <!-- TEAM -->
+    <section id="team">
+      <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+                      <div class="section-title">
+                          <h2>{{header_text.5.title}} <small>{{header_text.5.description}}</small></h2>
+                      </div>
+                </div>
+
+                {% for t in team_blocks %}
+                  <div class="col-md-3 col-sm-6">
+                      <div class="team-thumb">
+                            <div class="team-image">
+                                <img src="{{t.image.url}}" class="img-responsive" alt="">
+                            </div>
+                            <div class="team-info">
+                                <h3>{{t.name}}</h3>
+                                <span>{{t.description }}</span>
+                            </div>
+                            <ul class="social-icon">
+                              <li><a href="{{t.social_url1}}" class="{{t.social_html_class1}}" title="{{t.social_title1}}"></a></li>
+                              <li><a href="{{t.social_url2}}" class="{{t.social_html_class2}}" title="{{t.social_title2}}" ></a></li>
+                              <li><a href="{{t.social_url3}}" class="{{t.social_html_class3}}" title="{{t.social_title3}}"></a></li>
+                            </ul>
+                      </div>
+                  </div>
+                {% endfor %} 
+
+            </div>
+      </div>
+    </section>
+  {% endblock %}

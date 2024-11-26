@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}    
+  
+  
+  {% block courses_template %}
+   <!-- Courses -->
+    <section id="courses">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12 col-sm-12">
+              <div class="section-title">
+                  <h2>{{header_text.6.title}} <small>{{header_text.6.description}}</small></h2>
+              </div>
+
+              <div class="owl-carousel owl-theme owl-courses">
+                  {% for course in courses %}
+                    <div class="col-md-4 col-sm-4">
+                            <div class="item">
+                                <div class="courses-thumb">
+                                    <div class="courses-top">
+                                        <div class="courses-image">
+                                                <img src="{{course.image1.url}}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="courses-date">
+                                            
+                                            <span><i class="{{course.icon_data}}"></i> {{course.data}}</span>
+                                            <span><i class="{{course.icon_hours}}"></i> {{course.duration_in_hours}} Hours</span>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="courses-detail">
+                                        <h3><a href="#">{{course.title}}</a></h3>
+                                        <p>{{course.description}}</p>
+                                    </div>
+
+                                    <div class="courses-info">
+                                        <div class="courses-author">
+                                                <img src="{{course.image2.url}}" class="img-responsive" alt="">
+                                                <span>{{course.name}}</span>
+                                        </div>
+                                        <div class="courses-price">
+                                                <a href="#"><span> {{course.price}}</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                  {% endfor %}  
+              </div>
+          </div>      
+        </div>
+      </div>
+    </section>
+  {% endblock %}

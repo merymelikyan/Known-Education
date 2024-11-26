@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+{% load static %}    
+
+  {% block home_template %}
+
+     <!-- HOME -->
+     <section id="home">
+        <div class="row">
+
+            <div class="owl-carousel owl-theme home-slider">
+                  <div class="item item-first">
+                      <div class="caption">
+                            <div class="container">
+                                <div class="col-md-6 col-sm-12">
+                                    <h1>{{header_text.0.title }}</h1>
+                                    <h3>{{header_text.0.description }}</3>
+                                    <a href="#feature" class="section-btn btn btn-default smoothScroll">Discover more</a>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="item item-second">
+                      <div class="caption">
+                            <div class="container">
+                                <div class="col-md-6 col-sm-12">
+                                      <h1>{{header_text.1.title}}</h1>
+                                      <h3>{{header_text.1.description }}</h3>
+                                      <a href="#courses" class="section-btn btn btn-default smoothScroll">Take a course</a>
+                                </div>
+                            </div>
+                      </div>
+                  </div>
+
+                  <div class="item item-third">
+                      <div class="caption">
+                            <div class="container">
+                                <div class="col-md-6 col-sm-12">
+                                      <h1>{{header_text.2.title }}</h1>
+                                      <h3>{{header_text.2.description }} <a rel="nofollow" href="https://www.facebook.com/templatemo">templatemo</a> page.</h3>
+                                      <a href="#contact" class="section-btn btn btn-default smoothScroll">Let's chat</a>
+                                </div>
+                            </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+   </section>
+
+
+   <!-- FEATURE -->
+   <section id="feature">
+        <div class="container">
+             <div class="row">
+              {% for f in feature %}
+                  <div class="col-md-4 col-sm-4">
+                    <div style="
+                      display:grid;
+                      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                      grid-gap: 16px;
+                      ">
+                        <div class="feature-thumb">              
+                            <span>{{f.tag}}</span>
+                            <h3>{{f.title}}</h3>
+                            <p>{{f.description}}</p>
+                        </div>
+                      </div>
+                  </div>
+              {% endfor %}  
+             </div>
+        </div>
+   </section>
+
+
+   <!-- ABOUT -->
+   <section id="about">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                  <div class="about-info">
+                      <h2>{{header_text.4.title}}</h2>
+                      {% for a in about %}
+                        <figure>
+                          <span><i class="{{a.icon}}"></i></span>
+                          <figcaption>
+                              <h3>{{a.title}}</h3>
+                              <p>{{a.description}}</p>
+                          </figcaption>
+                        </figure>
+                      {% endfor %}
+                  </div>
+              </div>
+                
+                    
+              <div class="col-md-offset-1 col-md-4 col-sm-12">
+                    <div class="entry-form">
+                        <form action="#" method="post">
+                              <h2>Signup today</h2>
+                              <input type="text" name="full name" class="form-control" placeholder="Full name" required="">
+
+                              <input type="email" name="email" class="form-control" placeholder="Your email address" required="">
+
+                              <input type="password" name="password" class="form-control" placeholder="Your password" required="">
+
+                              <button class="submit-btn form-control" id="form-submit">Get started</button>
+                        </form>
+                    </div>
+              </div>
+
+            </div>
+        </div>
+   </section>
+
+
+   <!-- TEAM -->
+   <section id="team">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-12 col-sm-12">
+                       <div class="section-title">
+                            <h2>{{header_text.5.title}} <small>{{header_text.5.description}}</small></h2>
+                       </div>
+                  </div>
+
+                  {% for t in team_blocks %}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="team-thumb">
+                              <div class="team-image">
+                                  <img src="{{t.image.url}}" class="img-responsive" alt="">
+                              </div>
+                              <div class="team-info">
+                                  <h3>{{t.name}}</h3>
+                                  <span>{{t.description }}</span>
+                              </div>
+                              <ul class="social-icon">
+                                <li><a href="{{t.social_url1}}" class="{{t.social_html_class1}}" title="{{t.social_title1}}"></a></li>
+                                <li><a href="{{t.social_url2}}" class="{{t.social_html_class2}}" title="{{t.social_title2}}" ></a></li>
+                                <li><a href="{{t.social_url3}}" class="{{t.social_html_class3}}" title="{{t.social_title3}}"></a></li>
+                              </ul>
+                        </div>
+                    </div>
+                  {% endfor %} 
+
+             </div>
+        </div>
+   </section>
+
+
+   <!-- Courses -->
+   <section id="courses">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-12 col-sm-12">
+                       <div class="section-title">
+                            <h2>{{header_text.6.title}} <small>{{header_text.6.description}}</small></h2>
+                       </div>
+
+                      <div class="owl-carousel owl-theme owl-courses">
+                          {% for course in courses %}
+                            <div class="col-md-4 col-sm-4">
+                                 <div class="item">
+                                      <div class="courses-thumb">
+                                           <div class="courses-top">
+                                                <div class="courses-image">
+                                                     <img src="{{course.image1.url}}" class="img-responsive" alt="">
+                                                </div>
+                                                <div class="courses-date">
+                                                  
+                                                  <span><i class="{{course.icon_data}}"></i> {{course.data}}</span>
+                                                  <span><i class="{{course.icon_hours}}"></i> {{course.duration_in_hours}} Hours</span>
+                                                   
+                                                </div>
+                                           </div>
+
+                                           <div class="courses-detail">
+                                                <h3><a href="#">{{course.title}}</a></h3>
+                                                <p>{{course.description}}</p>
+                                           </div>
+
+                                           <div class="courses-info">
+                                                <div class="courses-author">
+                                                     <img src="{{course.image2.url}}" class="img-responsive" alt="">
+                                                     <span>{{course.name}}</span>
+                                                </div>
+                                                <div class="courses-price">
+                                                     <a href="#"><span> {{course.price}}</span></a>
+                                                </div>
+                                           </div>
+                                      </div>
+                                 </div>
+                            </div>
+                          {% endfor %}  
+                      </div>
+                  </div>      
+             </div>
+        </div>
+   </section>
+
+
+   <!-- TESTIMONIAL -->
+   <section id="testimonial">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-12 col-sm-12">
+                       <div class="section-title">
+                            <h2>{{header_text.7.title}} <small>{{header_text.7.description}}</small></h2>
+                       </div>
+
+                       <div class="owl-carousel owl-theme owl-client">
+                            {% comment %} <div class="col-md-4 col-sm-4">
+                                 <div class="item">
+                                      <div class="tst-image">
+                                           <img src="{{studentreviews.image.url}}" class="img-responsive" alt="">
+                                      </div>
+                                      <div class="tst-author">
+                                           <h4>{{studentreviews.name}}</h4>
+                                           <span>{{studentreviews.position}}</span>
+                                      </div>
+                                      <p>{{studentreviews.0.description}}</p>
+                                      <div class="tst-rating">
+                                           <i class="fa fa-star"></i>
+                                           <i class="fa fa-star"></i>
+                                           <i class="fa fa-star"></i>
+                                           <i class="fa fa-star"></i>
+                                           <i class="fa fa-star"></i>
+                                      </div>
+                                 </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4">
+                                 <div class="item">
+                                      <div class="tst-image">
+                                           <img src="{{studentreviews.1.image.url}}" class="img-responsive" alt="">
+                                      </div>
+                                      <div class="tst-author">
+                                           <h4>{{studentreviews.1.name}}</h4>
+                                           <span>{{studentreviews.1.position}}</span>
+                                      </div>
+                                      <p>{{studentreviews.1.description}}</p>
+                                      <div class="tst-rating">
+                                           <i class="fa fa-star"></i>
+                                           <i class="fa fa-star"></i>
+                                           <i class="fa fa-star"></i>
+                                      </div>
+                                 </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4">
+                                 <div class="item">
+                                      <div class="tst-image">
+                                           <img src="{{studentreviews.2.image.url}}" class="img-responsive" alt="">
+                                      </div>
+                                      <div class="tst-author">
+                                           <h4>{{studentreviews.2.name}}</h4>
+                                           <span>{{studentreviews.2.position}}</span>
+                                      </div>
+                                      <p>{{studentreviews.2.description}}</p>
+                                      <div class="tst-rating">
+                                           <i class="fa fa-star"></i>
+                                           <i class="fa fa-star"></i>
+                                           <i class="fa fa-star"></i>
+                                           <i class="fa fa-star"></i>
+                                      </div>
+                                 </div>
+                            </div> {% endcomment %}
+                          {% for student in studentreviews %}  
+                            <div class="col-md-4 col-sm-4">
+                                 <div class="item">
+                                      <div class="tst-image">
+                                           <img src="{{student.image.url}}" class="img-responsive" alt="">
+                                      </div>
+                                      <div class="tst-author">
+                                           <h4>{{student.name}}</h4>
+                                           <span>{{student.position}}</span>
+                                      </div>
+                                      <p>{{student.description}}</p>
+                                      <div class="tst-rating">
+                                        <i class="{{student.reviews_class1}}"></i>
+                                        <i class="{{student.reviews_class2}}"></i>
+                                        <i class="{{student.reviews_class3}}"></i>
+                                        <i class="{{student.reviews_class4}}"></i>
+                                        <i class="{{student.reviews_class5}}"></i>
+                                      </div>
+                                 </div>
+                            </div>
+                          {% endfor %}  
+                       </div>
+                  </div>
+             </div>
+        </div>
+   </section> 
+
+
+   <!-- CONTACT -->
+   <section id="contact">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-6 col-sm-12">
+                       <form id="contact-form" role="form" action="" method="post">
+                            <div class="section-title">
+                                 <h2>{{contact_us.title}} <small>{{contact_us.description}}</small></h2>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                 <input name="name" type="text" class="form-control" placeholder="Enter full name"  required="">
+                  
+                                 <input name="email" type="email" class="form-control" placeholder="Enter email address"  required="">
+
+                                 <textarea name="content" class="form-control" rows="6" placeholder="Tell us about your message"  required=""></textarea>
+                            </div>
+
+                            <div class="col-md-4 col-sm-12">
+                                 <input type="submit" class="form-control" name="content" value="Send Message">
+                            </div>
+
+                       </form>
+                  </div>
+
+                  <div class="col-md-6 col-sm-12">
+                       <div class="contact-image">
+                            <img src="{{contact_us.image.url}}" class="img-responsive" alt="Smiling Two Girls">
+                       </div>
+                  </div>
+
+             </div>
+        </div>
+   </section>  
+   
+  {% endblock %}      
+

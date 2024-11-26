@@ -60,9 +60,15 @@ class TeamBlock(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(max_length=255)
     image = models.ImageField(upload_to="team_blocks")
-    social_title = models.CharField(max_length=50, null=True, blank=True)
-    social_url = models.URLField(max_length=255, blank=True)
-    social_html_class = models.CharField(max_length=200, null=True, blank=True)
+    social_title1 = models.CharField(max_length=50, null=True, blank=True)
+    social_title2 = models.CharField(max_length=50, null=True, blank=True)
+    social_title3 = models.CharField(max_length=50, null=True, blank=True)
+    social_url1 = models.URLField(max_length=255, blank=True)
+    social_url2 = models.URLField(max_length=255, blank=True)
+    social_url3 = models.URLField(max_length=255, blank=True)
+    social_html_class1 = models.CharField(max_length=200, null=True, blank=True)
+    social_html_class2 = models.CharField(max_length=200, null=True, blank=True)
+    social_html_class3 = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return f"{self.name} {self.description}"
@@ -71,19 +77,6 @@ class TeamBlock(models.Model):
         verbose_name = "Team Block"
         verbose_name_plural = "Team Blocks"
         
-
-
-class AvatarSocials(models.Model):
-    title = models.CharField(max_length=50)
-    url = models.URLField(max_length=255, blank=True)
-    html_class = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = "AvatarSocial"
-        verbose_name_plural = "AvatarSocials"
 
 
 class Courses(models.Model):
@@ -114,15 +107,18 @@ class StudentReviews(models.Model):
     position = models.CharField(max_length=60)
     description = models.TextField(max_length=250)
     image = models.ImageField(upload_to="studentreviews")
-    total_reviews  = models.CharField(max_length=400)
-    html_class = models.CharField(max_length=255)
+    reviews_class1  = models.CharField(max_length=400, blank=True, null=True)
+    reviews_class2  = models.CharField(max_length=400, blank=True, null=True)
+    reviews_class3 = models.CharField(max_length=400, blank=True, null=True)
+    reviews_class4  = models.CharField(max_length=400, blank=True, null=True)
+    reviews_class5  = models.CharField(max_length=400, blank=True, null=True)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = "StudentReview"
-        verbose_name_plural = "StudentReviews"
+        verbose_name = "Student Review"
+        verbose_name_plural = "Student Reviews"
 
 
 
@@ -139,8 +135,8 @@ class ContactInfo(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = "ContactInfo"
-        verbose_name_plural = "ContactInfo"
+        verbose_name = "Contact Info"
+        verbose_name_plural = "Contact Info"
 
 
 class Headquarter(models.Model):
@@ -180,3 +176,14 @@ class Socials(models.Model):
     class Meta:
         verbose_name = "Social"
         verbose_name_plural = "Socials"
+
+
+class QuickLinks(models.Model):
+    title = models.CharField(max_length=50, blank=True, null=True)
+   
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Quick Links"
+        verbose_name_plural = "Quick Links"

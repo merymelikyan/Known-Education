@@ -6,13 +6,13 @@ from .models import (
     Feature,
     About,
     TeamBlock,
-    AvatarSocials,
     Courses,
     StudentReviews,
     ContactInfo,
     Headquarter,
     ContactUs,
-    Socials
+    Socials,
+    QuickLinks
    
 
 )
@@ -23,12 +23,11 @@ admin.site.register(FooterText)
 admin.site.register(Feature)
 admin.site.register(About)
 admin.site.register(TeamBlock)
-admin.site.register(AvatarSocials)
 admin.site.register(Courses)
 admin.site.register(StudentReviews)
 admin.site.register(ContactInfo)
 admin.site.register(Headquarter)
 admin.site.register(ContactUs)
 admin.site.register(Socials)
-
+admin.site.register(QuickLinks)
 
